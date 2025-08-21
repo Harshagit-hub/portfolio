@@ -657,3 +657,19 @@ footer .text span a:hover{
   display: none;
 }
 
+/* For tablets */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  .nav-menu {
+    flex-direction: column;
+  }
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+  .header {
+    font-size: 1.2rem;
+  }
+}
