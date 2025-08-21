@@ -255,12 +255,20 @@
         </div>
 
         <!-- Right side: Form -->
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
+<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+  <!-- Hidden input for Netlify -->
+  <input type="hidden" name="form-name" value="contact">
+  <!-- Honeypot field to prevent spam -->
+  <p style="display:none">
+    <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+  </p>
+
+  <!-- User input fields -->
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+  <button type="submit" class="btn">Send Message</button>
+</form>
 
       </div>
     </div>
