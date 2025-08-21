@@ -21,5 +21,23 @@ let letter = '';
     setTimeout(type, 150);
   }
 })();
+const form = document.querySelector(".contact-form");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  
+  try {
+    await fetch("/", {
+      method: "POST",
+      body: formData
+    });
+    alert("Message sent successfully!");
+    form.reset();
+  } catch (error) {
+    alert("Oops! Something went wrong.");
+  }
+});
+
 
 
